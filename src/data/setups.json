@@ -1,0 +1,209 @@
+{
+  "setups": [
+    {
+      "name": "MAXIMUM_DOWNFORCE",
+      "track": "BRAZIL",
+      "weather": "DRY",
+      "time": null,
+      "data": {
+        "aerodynamics": {
+          "frontWingAero": 10,
+          "rearWingAero": 11
+        },
+        "transmission": {
+          "differentialAdjustmentsOnThrottle": 75,
+          "differentialAdjustmentOffThrottle": 75
+        },
+        "suspensionGemoetry": {
+          "frontCamber": -2.6,
+          "rearCamber": -1.1,
+          "frontToe": 0.08,
+          "rearToe": 0.41
+        },
+        "suspension": {
+          "frontSuspension": 4,
+          "rearSuspension": 4,
+          "frontAntiRollBar": 8,
+          "rearAntiRollBar": 8,
+          "frontRideHeight": 8,
+          "rearRideHeight": 8
+        },
+        "brakes": {
+          "brakePressure": 79,
+          "frontBrakeBias": 58
+        },
+        "tyres": {
+          "frontTyrePressure": 22.2,
+          "rearTyrePressure": 20.7
+        },
+        "weightDistribution": {
+          "ballast": 4
+        }
+      }
+    },
+    {
+      "name": "INCREASED_DOWNFORCE",
+      "track": "BRAZIL",
+      "weather": "DRY",
+      "time": null,
+      "data": {
+        "aerodynamics": {
+          "frontWingAero": 8,
+          "rearWingAero": 9
+        },
+        "transmission": {
+          "differentialAdjustmentsOnThrottle": 75,
+          "differentialAdjustmentOffThrottle": 75
+        },
+        "suspensionGemoetry": {
+          "frontCamber": -2.8,
+          "rearCamber": -1.3,
+          "frontToe": 0.09,
+          "rearToe": 0.38
+        },
+        "suspension": {
+          "frontSuspension": 5,
+          "rearSuspension": 5,
+          "frontAntiRollBar": 7,
+          "rearAntiRollBar": 7,
+          "frontRideHeight": 7,
+          "rearRideHeight": 7
+        },
+        "brakes": {
+          "brakePressure": 77,
+          "frontBrakeBias": 59
+        },
+        "tyres": {
+          "frontTyrePressure": 22.6,
+          "rearTyrePressure": 21.1
+        },
+        "weightDistribution": {
+          "ballast": 5
+        }
+      }
+    },
+    {
+      "name": "BALANCED_DEFAULT",
+      "track": "BRAZIL",
+      "weather": "DRY",
+      "time": null,
+      "data": {
+        "aerodynamics": {
+          "frontWingAero": 6,
+          "rearWingAero": 6
+        },
+        "transmission": {
+          "differentialAdjustmentsOnThrottle": 75,
+          "differentialAdjustmentOffThrottle": 75
+        },
+        "suspensionGemoetry": {
+          "frontCamber": -3.0,
+          "rearCamber": -1.5,
+          "frontToe": 0.1,
+          "rearToe": 0.35
+        },
+        "suspension": {
+          "frontSuspension": 6,
+          "rearSuspension": 6,
+          "frontAntiRollBar": 6,
+          "rearAntiRollBar": 6,
+          "frontRideHeight": 6,
+          "rearRideHeight": 6
+        },
+        "brakes": {
+          "brakePressure": 75,
+          "frontBrakeBias": 60
+        },
+        "tyres": {
+          "frontTyrePressure": 23.0,
+          "rearTyrePressure": 21.5
+        },
+        "weightDistribution": {
+          "ballast": 6
+        }
+      }
+    },
+    {
+      "name": "INCREASED_TOP_SPEED",
+      "track": "BRAZIL",
+      "weather": "DRY",
+      "time": null,
+      "data": {
+        "aerodynamics": {
+          "frontWingAero": 4,
+          "rearWingAero": 4
+        },
+        "transmission": {
+          "differentialAdjustmentsOnThrottle": 75,
+          "differentialAdjustmentOffThrottle": 75
+        },
+        "suspensionGemoetry": {
+          "frontCamber": -3.2,
+          "rearCamber": -1.7,
+          "frontToe": 0.11,
+          "rearToe": 0.35
+        },
+        "suspension": {
+          "frontSuspension": 7,
+          "rearSuspension": 7,
+          "frontAntiRollBar": 5,
+          "rearAntiRollBar": 5,
+          "frontRideHeight": 5,
+          "rearRideHeight": 5
+        },
+        "brakes": {
+          "brakePressure": 73,
+          "frontBrakeBias": 61
+        },
+        "tyres": {
+          "frontTyrePressure": 23.4,
+          "rearTyrePressure": 21.9
+        },
+        "weightDistribution": {
+          "ballast": 7
+        }
+      }
+    },
+    {
+      "name": "MAXIMUM_TOP_SPEED",
+      "track": "BRAZIL",
+      "weather": "DRY",
+      "time": null,
+      "data": {
+        "aerodynamics": {
+          "frontWingAero": 2,
+          "rearWingAero": 2
+        },
+        "transmission": {
+          "differentialAdjustmentsOnThrottle": 75,
+          "differentialAdjustmentOffThrottle": 75
+        },
+        "suspensionGemoetry": {
+          "frontCamber": -3.4,
+          "rearCamber": -1.9,
+          "frontToe": 0.12,
+          "rearToe": 0.32
+        },
+        "suspension": {
+          "frontSuspension": 8,
+          "rearSuspension": 8,
+          "frontAntiRollBar": 4,
+          "rearAntiRollBar": 4,
+          "frontRideHeight": 4,
+          "rearRideHeight": 4
+        },
+        "brakes": {
+          "brakePressure": 71,
+          "frontBrakeBias": 62
+        },
+        "tyres": {
+          "frontTyrePressure": 23.8,
+          "rearTyrePressure": 22.3
+        },
+        "weightDistribution": {
+          "ballast": 8
+        }
+      }
+    }
+  ]
+}
