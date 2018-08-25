@@ -1,6 +1,8 @@
 {
   "setups": [
     {
+      "id": 1,
+      "team": "MERCEDES",
       "name": "MAXIMUM_DOWNFORCE",
       "track": "BRAZIL",
       "weather": "DRY",
@@ -42,6 +44,8 @@
       }
     },
     {
+      "id": 2,
+      "team": "MERCEDES",
       "name": "INCREASED_DOWNFORCE",
       "track": "BRAZIL",
       "weather": "DRY",
@@ -83,6 +87,8 @@
       }
     },
     {
+      "id": 3,
+      "team": "MERCEDES",
       "name": "BALANCED_DEFAULT",
       "track": "BRAZIL",
       "weather": "DRY",
@@ -124,6 +130,8 @@
       }
     },
     {
+      "id": 4,
+      "team": "MERCEDES",
       "name": "INCREASED_TOP_SPEED",
       "track": "BRAZIL",
       "weather": "DRY",
@@ -165,6 +173,8 @@
       }
     },
     {
+      "id": 5,
+      "team": "MERCEDES",
       "name": "MAXIMUM_TOP_SPEED",
       "track": "BRAZIL",
       "weather": "DRY",

@@ -1,12 +1,10 @@
 {
+  "id": 0,
+  "team": "MERCEDES",
   "name": "MAXIMUM_DOWNFORCE",
   "track": "BRAZIL",
   "weather": "DRY",
-  "time": {
-    "minutes": 1,
-    "seconds": 8,
-    "milliseconds": 528
-  },
+  "time": "1:08.528",
   "data": {
     "aerodynamics": {
       "frontWingAero": 10,
