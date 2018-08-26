@@ -1,4 +1,96 @@
 {
+  "setupLimits": {
+    "aerodynamics": {
+      "frontWingAero": {
+        "min": 1,
+        "max": 11
+      },
+      "rearWingAero": {
+        "min": 1,
+        "max": 11
+      }
+    },
+    "transmission": {
+      "differentialAdjustmentsOnThrottle": {
+        "min": 50,
+        "max": 100
+      },
+      "differentialAdjustmentOffThrottle": {
+        "min": 50,
+        "max": 100
+      }
+    },
+    "suspensionGemoetry": {
+      "frontCamber": {
+        "min": -3.5,
+        "max": -2.5
+      },
+      "rearCamber": {
+        "min": -2,
+        "max": -1
+      },
+      "frontToe": {
+        "min": 0.05,
+        "max": 0.15
+      },
+      "rearToe": {
+        "min": 0.2,
+        "max": 0.5
+      }
+    },
+    "suspension": {
+      "frontSuspension": {
+        "min": 1,
+        "max": 11
+      },
+      "rearSuspension": {
+        "min": 1,
+        "max": 11
+      },
+      "frontAntiRollBar": {
+        "min": 1,
+        "max": 11
+      },
+      "rearAntiRollBar": {
+        "min": 1,
+        "max": 11
+      },
+      "frontRideHeight": {
+        "min": 1,
+        "max": 11
+      },
+      "rearRideHeight": {
+        "min": 1,
+        "max": 11
+      }
+    },
+    "brakes": {
+      "brakePressure": {
+        "min": 50,
+        "max": 100
+      },
+      "frontBrakeBias": {
+        "min": 70,
+        "max": 50
+      }
+    },
+    "tyres": {
+      "frontTyrePressure": {
+        "min": 21,
+        "max": 25
+      },
+      "rearTyrePressure": {
+        "min": 19.5,
+        "max": 23.5
+      }
+    },
+    "weightDistribution": {
+      "ballast": {
+        "min": 1,
+        "max": 11
+      }
+    }
+  },
   "setups": [
     {
       "id": 1,
