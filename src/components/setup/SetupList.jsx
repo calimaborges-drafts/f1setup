@@ -48,7 +48,7 @@ class SetupList extends Component {
   render() {
     const { classes, setups } = this.props;
     return (
-      <Paper className={classes.root}>
+      <Paper className={classes.root} square>
         <Table className={classes.table}>
           <TableHead>
             <TableRow>

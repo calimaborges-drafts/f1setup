@@ -1,6 +1,22 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import { generateDomColorizer } from "../../../libs/colorizer";
+import { setupLimits } from "../../../data/database";
+
+const {
+  differentialAdjustmentsOnThrottle: differentialAdjustmentsOnThrottleLimit,
+  differentialAdjustmentOffThrottle: differentialAdjustmentOffThrottleLimit
+} = setupLimits.transmission;
+const differentialAdjustmentsOnThrottleColorizer = generateDomColorizer(
+  differentialAdjustmentsOnThrottleLimit.min,
+  differentialAdjustmentsOnThrottleLimit.max
+);
+const differentialAdjustmentOffThrottleColorizer = generateDomColorizer(
+  differentialAdjustmentOffThrottleLimit.min,
+  differentialAdjustmentOffThrottleLimit.max
+);
+
 export function TransmissionHeaders() {
   return (
     <Fragment>
@@ -15,13 +31,21 @@ export function TransmissionHeaders() {
 }
 
 export function TransmissionCells({ setup }) {
+  const {
+    differentialAdjustmentsOnThrottle,
+    differentialAdjustmentOffThrottle
+  } = setup.data.transmission;
   return (
     <Fragment>
       <TableCell>
-        {setup.data.transmission.differentialAdjustmentsOnThrottle}
+        {differentialAdjustmentsOnThrottleColorizer(
+          differentialAdjustmentsOnThrottle
+        )}
       </TableCell>
       <TableCell>
-        {setup.data.transmission.differentialAdjustmentOffThrottle}
+        {differentialAdjustmentOffThrottleColorizer(
+          differentialAdjustmentOffThrottle
+        )}
       </TableCell>
     </Fragment>
   );

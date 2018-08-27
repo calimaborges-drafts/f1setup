@@ -1,6 +1,33 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import { generateDomColorizer } from "../../../libs/colorizer";
+import { setupLimits } from "../../../data/database";
+
+const {
+  frontCamber: frontCamberLimit,
+  rearCamber: rearCamberLimit,
+  frontToe: frontToeLimit,
+  rearToe: rearToeLimit
+} = setupLimits.suspensionGemoetry;
+const frontCamberColorizer = generateDomColorizer(
+  frontCamberLimit.min,
+  frontCamberLimit.max
+);
+const rearCamberColorizer = generateDomColorizer(
+  rearCamberLimit.min,
+  rearCamberLimit.max
+);
+const frontToeColorizer = generateDomColorizer(
+  frontToeLimit.min,
+  frontToeLimit.max,
+  true
+);
+const rearToeColorizer = generateDomColorizer(
+  rearToeLimit.min,
+  rearToeLimit.max
+);
+
 export function SuspensionGeometryHeaders() {
   return (
     <Fragment>
@@ -21,12 +48,18 @@ export function SuspensionGeometryHeaders() {
 }
 
 export function SuspensionGeometryCells({ setup }) {
+  const {
+    frontCamber,
+    rearCamber,
+    frontToe,
+    rearToe
+  } = setup.data.suspensionGemoetry;
   return (
     <Fragment>
-      <TableCell>{setup.data.suspensionGemoetry.frontCamber}</TableCell>
-      <TableCell>{setup.data.suspensionGemoetry.rearCamber}</TableCell>
-      <TableCell>{setup.data.suspensionGemoetry.frontToe}</TableCell>
-      <TableCell>{setup.data.suspensionGemoetry.rearToe}</TableCell>
+      <TableCell>{frontCamberColorizer(frontCamber)}</TableCell>
+      <TableCell>{rearCamberColorizer(rearCamber)}</TableCell>
+      <TableCell>{frontToeColorizer(frontToe)}</TableCell>
+      <TableCell>{rearToeColorizer(rearToe)}</TableCell>
     </Fragment>
   );
 }

@@ -1,6 +1,23 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import { generateDomColorizer } from "../../../libs/colorizer";
+import { setupLimits } from "../../../data/database";
+
+const {
+  brakePressure: brakePressureLimit,
+  frontBrakeBias: frontBrakeBiasLimit
+} = setupLimits.brakes;
+const brakePressureColorizer = generateDomColorizer(
+  brakePressureLimit.min,
+  brakePressureLimit.max
+);
+const frontBrakeBiasColorizer = generateDomColorizer(
+  frontBrakeBiasLimit.max,
+  frontBrakeBiasLimit.min,
+  true
+);
+
 export function BrakesHeaders() {
   return (
     <Fragment>
@@ -15,10 +32,11 @@ export function BrakesHeaders() {
 }
 
 export function BrakesCells({ setup }) {
+  const { brakePressure, frontBrakeBias } = setup.data.brakes;
   return (
     <Fragment>
-      <TableCell>{setup.data.brakes.brakePressure}</TableCell>
-      <TableCell>{setup.data.brakes.frontBrakeBias}</TableCell>
+      <TableCell>{brakePressureColorizer(brakePressure)}</TableCell>
+      <TableCell>{frontBrakeBiasColorizer(frontBrakeBias)}</TableCell>
     </Fragment>
   );
 }

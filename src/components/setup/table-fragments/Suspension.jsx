@@ -1,6 +1,45 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import { generateDomColorizer } from "../../../libs/colorizer";
+import { setupLimits } from "../../../data/database";
+
+const {
+  frontSuspension: frontSuspensionLimit,
+  rearSuspension: rearSuspensionLimit,
+  frontAntiRollBar: frontAntiRollBarLimit,
+  rearAntiRollBar: rearAntiRollBarLimit,
+  frontRideHeight: frontRideHeightLimit,
+  rearRideHeight: rearRideHeightLimit
+} = setupLimits.suspension;
+
+const frontSuspensionColorizer = generateDomColorizer(
+  frontSuspensionLimit.min,
+  frontSuspensionLimit.max,
+  true
+);
+const rearSuspensionColorizer = generateDomColorizer(
+  rearSuspensionLimit.min,
+  rearSuspensionLimit.max,
+  true
+);
+const frontAntiRollBarColorizer = generateDomColorizer(
+  frontAntiRollBarLimit.min,
+  frontAntiRollBarLimit.max
+);
+const rearAntiRollBarColorizer = generateDomColorizer(
+  rearAntiRollBarLimit.min,
+  rearAntiRollBarLimit.max
+);
+const frontRideHeightColorizer = generateDomColorizer(
+  frontRideHeightLimit.min,
+  frontRideHeightLimit.max
+);
+const rearRideHeightColorizer = generateDomColorizer(
+  rearRideHeightLimit.min,
+  rearRideHeightLimit.max
+);
+
 export function SuspensionHeaders() {
   return (
     <Fragment>
@@ -27,14 +66,22 @@ export function SuspensionHeaders() {
 }
 
 export function SuspensionCells({ setup }) {
+  const {
+    frontSuspension,
+    rearSuspension,
+    frontAntiRollBar,
+    rearAntiRollBar,
+    frontRideHeight,
+    rearRideHeight
+  } = setup.data.suspension;
   return (
     <Fragment>
-      <TableCell>{setup.data.suspension.frontSuspension}</TableCell>
-      <TableCell>{setup.data.suspension.rearSuspension}</TableCell>
-      <TableCell>{setup.data.suspension.frontAntiRollBar}</TableCell>
-      <TableCell>{setup.data.suspension.rearAntiRollBar}</TableCell>
-      <TableCell>{setup.data.suspension.frontRideHeight}</TableCell>
-      <TableCell>{setup.data.suspension.rearRideHeight}</TableCell>
+      <TableCell>{frontSuspensionColorizer(frontSuspension)}</TableCell>
+      <TableCell>{rearSuspensionColorizer(rearSuspension)}</TableCell>
+      <TableCell>{frontAntiRollBarColorizer(frontAntiRollBar)}</TableCell>
+      <TableCell>{rearAntiRollBarColorizer(rearAntiRollBar)}</TableCell>
+      <TableCell>{frontRideHeightColorizer(frontRideHeight)}</TableCell>
+      <TableCell>{rearRideHeightColorizer(rearRideHeight)}</TableCell>
     </Fragment>
   );
 }
