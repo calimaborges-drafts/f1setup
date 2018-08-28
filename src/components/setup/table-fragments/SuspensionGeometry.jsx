@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import Abbr from "../../commons/Abbr";
 import { generateDomColorizer } from "../../../libs/colorizer";
 import { setupLimits } from "../../../data/database";
 
@@ -32,16 +33,16 @@ export function SuspensionGeometryHeaders() {
   return (
     <Fragment>
       <TableCell>
-        <abbr title="Front Camber">FC</abbr>
+        <Abbr title="Front Camber">FC</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Rear Camber">RC</abbr>
+        <Abbr title="Rear Camber">RC</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Front Toe">FT</abbr>
+        <Abbr title="Front Toe">FT</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Rear Toe">RT</abbr>
+        <Abbr title="Rear Toe">RT</Abbr>
       </TableCell>
     </Fragment>
   );

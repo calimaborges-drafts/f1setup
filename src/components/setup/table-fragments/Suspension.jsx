@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import Abbr from "../../commons/Abbr";
 import { generateDomColorizer } from "../../../libs/colorizer";
 import { setupLimits } from "../../../data/database";
 
@@ -44,22 +45,22 @@ export function SuspensionHeaders() {
   return (
     <Fragment>
       <TableCell>
-        <abbr title="Front Suspension">FS</abbr>
+        <Abbr title="Front Suspension">FS</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Rear Suspension">RS</abbr>
+        <Abbr title="Rear Suspension">RS</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Front Anti Roll Bar">FARB</abbr>
+        <Abbr title="Front Anti Roll Bar">FARB</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Rear Anti Roll Bar">RARB</abbr>
+        <Abbr title="Rear Anti Roll Bar">RARB</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Front Ride Height">FRH</abbr>
+        <Abbr title="Front Ride Height">FRH</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Rear Ride Height">RRH</abbr>
+        <Abbr title="Rear Ride Height">RRH</Abbr>
       </TableCell>
     </Fragment>
   );

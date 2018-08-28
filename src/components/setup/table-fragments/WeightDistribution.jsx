@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import Abbr from "../../commons/Abbr";
 import { generateDomColorizer } from "../../../libs/colorizer";
 import { setupLimits } from "../../../data/database";
 
@@ -16,7 +17,7 @@ export function WeightDistributionHeaders() {
   return (
     <Fragment>
       <TableCell>
-        <abbr title="Ballast">B</abbr>
+        <Abbr title="Ballast">B</Abbr>
       </TableCell>
     </Fragment>
   );

@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import Abbr from "../../commons/Abbr";
 import { generateDomColorizer } from "../../../libs/colorizer";
 import { setupLimits } from "../../../data/database";
 
@@ -21,10 +22,10 @@ export function TransmissionHeaders() {
   return (
     <Fragment>
       <TableCell>
-        <abbr title="Differential Adjustments On Throttle">DAONT</abbr>
+        <Abbr title="Differential Adjustments On Throttle">DAONT</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Differential Adjustments Off Throttle">DAOFT</abbr>
+        <Abbr title="Differential Adjustments Off Throttle">DAOFT</Abbr>
       </TableCell>
     </Fragment>
   );

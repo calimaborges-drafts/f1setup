@@ -5,7 +5,8 @@ import Tooltip from "@material-ui/core/Tooltip";
 const styles = {
   abbr: {
     textDecoration: "underline",
-    textDecorationStyle: "dotted"
+    textDecorationStyle: "dotted",
+    userSelect: "none"
   }
 };
 
