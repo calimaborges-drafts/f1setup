@@ -66,6 +66,7 @@ export function hexalize(number) {
   return number.toString(16).padStart(2, "0");
 }
 
+// FIXME: Obviously in the wrong place
 const avatarStyle = hexColor => ({
   backgroundColor: hexColor,
   width: 25,
