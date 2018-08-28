@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import Abbr from "../../commons/Abbr";
 import { generateDomColorizer } from "../../../libs/colorizer";
 import { setupLimits } from "../../../data/database";
 
@@ -22,10 +23,10 @@ export function BrakesHeaders() {
   return (
     <Fragment>
       <TableCell>
-        <abbr title="Brake Pressure">BP</abbr>
+        <Abbr title="Brake Pressure">BP</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Front Brake Bias">FBP</abbr>
+        <Abbr title="Front Brake Bias">FBP</Abbr>
       </TableCell>
     </Fragment>
   );

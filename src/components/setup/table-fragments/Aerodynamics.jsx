@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
+import Abbr from "../../commons/Abbr";
 import { generateDomColorizer } from "../../../libs/colorizer";
 import { setupLimits } from "../../../data/database";
 
@@ -21,10 +22,10 @@ export function AerodynamicsHeaders() {
   return (
     <Fragment>
       <TableCell>
-        <abbr title="Front Wing Aero">FWA</abbr>
+        <Abbr title="Front Wing Aero">FWA</Abbr>
       </TableCell>
       <TableCell>
-        <abbr title="Rear Wing Aero">RWA</abbr>
+        <Abbr title="Rear Wing Aero">RWA</Abbr>
       </TableCell>
     </Fragment>
   );
