@@ -3,7 +3,7 @@ import TableCell from "@material-ui/core/TableCell";
 
 import Abbr from "../../commons/Abbr";
 import { generateDomColorizer } from "../../../libs/colorizer";
-import { setupLimits } from "../../../data/database";
+import { setupLimits } from "../../../../data/database";
 
 const { ballast: ballastLimit } = setupLimits.weightDistribution;
 

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -16,17 +17,20 @@ const styles = theme => ({
 
 function BasicPageLayout({ title, classes, toolbarChildren, children }) {
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar>
-          {toolbarChildren}
-          <Typography variant="title" color="inherit">
-            {title || `F1 Setup Manager ${version}`}
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <div className={classes.content}>{children}</div>
-    </div>
+    <Fragment>
+      <CssBaseline />
+      <div className={classes.root}>
+        <AppBar position="fixed">
+          <Toolbar>
+            {toolbarChildren}
+            <Typography variant="title" color="inherit">
+              {title || `F1 Setup Manager ${version}`}
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <div className={classes.content}>{children}</div>
+      </div>
+    </Fragment>
   );
 }
 
