@@ -19,7 +19,7 @@ https://f1setup.now.sh/
 
 ### Why not use a spreadsheet?
 
-Because I pretend to evolve the system to something more interesting and crowd populated
+Because I intend to evolve the system to something more interesting and crowd populated
 
 ## Current production deploy method
 
