@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
-import Abbr from "../../commons/Abbr";
+import Abbr from "../../shared/Abbr";
 import { generateDomColorizer } from "../../../shared/colorizer";
 import { setupLimits } from "../../../data/database";
 
