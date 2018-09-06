@@ -1,4 +1,5 @@
 {
   "name": "f1setup",
-  "alias": "f1setup"
+  "alias": "f1setup",
+  "files": ["build"]
 }

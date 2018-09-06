@@ -22,9 +22,8 @@ https://f1setup.now.sh/
 
 Because I intend to evolve the system to something more interesting and crowd populated
 
-## Current production deploy method
+## Clean deployments
 
 ```
-yarn now
-yarn now alias <full_address> f1setup
+npx now rm f1setup --safe --yes
 ```
