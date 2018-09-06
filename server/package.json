@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "mongodb-runner start",
+    "start": "node index.js",
+    "poststart": "mongodb-runner stop"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "parse-dashboard": "^1.2.0",
+    "parse-server": "^3.0.0"
+  },
+  "devDependencies": {
+    "mongodb-runner": "^4.1.0"
+  }
+}
