@@ -11,7 +11,7 @@ cache:
 before_deploy: npm install now --no-save
 deploy:
   - provider: script
-    script: now --public --token $NOW_TOKEN
+    script: cd client && now --public --token $NOW_TOKEN
     skip_cleanup: true
     on:
       all_branches: true
