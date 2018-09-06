@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import TableCell from "@material-ui/core/TableCell";
 
 import Abbr from "../../commons/Abbr";
-import { generateDomColorizer } from "../../../libs/colorizer";
+import { generateDomColorizer } from "../../../shared/colorizer";
 import { setupLimits } from "../../../data/database";
 
 const { ballast: ballastLimit } = setupLimits.weightDistribution;
