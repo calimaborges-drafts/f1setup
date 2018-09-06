@@ -26,7 +26,7 @@ describe("colorizer should generate color based on data range", () => {
     const max = 0.15;
     const colorize = generateColorizer(min, max);
     const { green, red } = colorize(0.15);
-    expect(green).toBeCloseTo(255);
+    expect(green).toBeCloseTo(200);
     expect(red).toBeCloseTo(0);
   });
 
@@ -35,7 +35,7 @@ describe("colorizer should generate color based on data range", () => {
     const max = 0.15;
     const colorize = generateColorizer(min, max);
     const { red, green } = colorize(0.05);
-    expect(red).toBeCloseTo(255);
+    expect(red).toBeCloseTo(200);
     expect(green).toBeCloseTo(0);
   });
 
@@ -44,7 +44,7 @@ describe("colorizer should generate color based on data range", () => {
     const max = 0.15;
     const colorize = generateColorizer(min, max);
     const { red, green } = colorize(0.1);
-    expect(green).toBeCloseTo(127);
-    expect(red).toBeCloseTo(127);
+    expect(green).toBeCloseTo(100);
+    expect(red).toBeCloseTo(100);
   });
 });

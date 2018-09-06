@@ -1,0 +1,15 @@
+{
+  "name": "f1setup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/calimaborges/f1setup.git",
+  "author": "Carlos Augusto Borges <calimaborges@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "test": "CI=true lerna run test"
+  },
+  "devDependencies": {
+    "lerna": "^3.3.0"
+  }
+}
