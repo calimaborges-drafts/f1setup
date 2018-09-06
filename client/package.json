@@ -12,7 +12,7 @@
   },
   "scripts": {
     "now-build": "echo 'built using travis'",
-    "now-start": "serve --single ./build",
+    "now-start": "serve -s ./build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
