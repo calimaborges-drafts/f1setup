@@ -13,5 +13,5 @@ cache:
 before_script: 
   - cd $PROJECT_DIR
 
-compile: yarn
+install: yarn
 test: yarn test
