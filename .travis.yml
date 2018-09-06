@@ -9,8 +9,7 @@ cache:
     - "node_modules"
 
 before_deploy: 
-  - cd client
-  - npm install now --no-save
+  - npm install --global now
 deploy:
   - provider: script
     script: cd client && now --public --token $NOW_TOKEN
