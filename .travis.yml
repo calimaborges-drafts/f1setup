@@ -8,6 +8,8 @@ cache:
     - "server/node_modules"
     - "node_modules"
 
+script: yarn build
+
 before_deploy: 
   - npm install --global now
 deploy:
