@@ -14,12 +14,6 @@ before_deploy:
   - npm install --global now
 deploy:
   - provider: script
-    script: cd client && now --public --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      all_branches: true
-      master: false
-  - provider: script
     script: cd client && now --public --token $NOW_TOKEN && now alias --public --token $NOW_TOKEN
     skip_cleanup: true
     on:
