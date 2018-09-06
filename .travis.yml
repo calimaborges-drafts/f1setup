@@ -9,3 +9,11 @@ env:
 cache:
   directories:
     - "$PROJECT_DIR/node_modules"
+
+before_script: cd $PROJECT_DIR
+
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+
