@@ -14,6 +14,7 @@ https://f1setup.now.sh/
 - [ ] Compare current setup with listed setup under mouse on mouse over
 - [x] Use `now` to deploy
 - [ ] Configure `deploy` on commit and `alias` on tag with `travis-ci` and `now`
+- [ ] Might be possible to deploy everything in one server on now. Think about it. Remember to consider development cycle.
 
 ## FAQ
 
