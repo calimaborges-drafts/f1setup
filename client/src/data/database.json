@@ -410,8 +410,8 @@
           "differentialAdjustmentOffThrottle": 65
         },
         "suspensionGemoetry": {
-          "frontCamber": -2.50,
-          "rearCamber": -1.10,
+          "frontCamber": -2.5,
+          "rearCamber": -1.1,
           "frontToe": 0.07,
           "rearToe": 0.26
         },
@@ -453,8 +453,8 @@
           "differentialAdjustmentOffThrottle": 69
         },
         "suspensionGemoetry": {
-          "frontCamber": -3.50,
-          "rearCamber": -1.70,
+          "frontCamber": -3.5,
+          "rearCamber": -1.7,
           "frontToe": 0.05,
           "rearToe": 0.26
         },
@@ -496,8 +496,8 @@
           "differentialAdjustmentOffThrottle": 80
         },
         "suspensionGemoetry": {
-          "frontCamber": -3.40,
-          "rearCamber": -1.90,
+          "frontCamber": -3.4,
+          "rearCamber": -1.9,
           "frontToe": 0.11,
           "rearToe": 0.41
         },
@@ -539,8 +539,8 @@
           "differentialAdjustmentOffThrottle": 60
         },
         "suspensionGemoetry": {
-          "frontCamber": -2.60,
-          "rearCamber": -1.30,
+          "frontCamber": -2.6,
+          "rearCamber": -1.3,
           "frontToe": 0.08,
           "rearToe": 0.26
         },
@@ -559,6 +559,49 @@
         "tyres": {
           "frontTyrePressure": 22.6,
           "rearTyrePressure": 20.7
+        },
+        "weightDistribution": {
+          "ballast": 7
+        }
+      }
+    },
+    {
+      "id": 12,
+      "team": "Mercedes",
+      "name": "OMG its Jo",
+      "track": "Italy",
+      "weather": "DRY",
+      "time": "01:18:964",
+      "data": {
+        "aerodynamics": {
+          "frontWingAero": 1,
+          "rearWingAero": 3
+        },
+        "transmission": {
+          "differentialAdjustmentsOnThrottle": 100,
+          "differentialAdjustmentOffThrottle": 80
+        },
+        "suspensionGemoetry": {
+          "frontCamber": -2.5,
+          "rearCamber": -1.0,
+          "frontToe": 0.05,
+          "rearToe": 0.2
+        },
+        "suspension": {
+          "frontSuspension": 4,
+          "rearSuspension": 4,
+          "frontAntiRollBar": 8,
+          "rearAntiRollBar": 8,
+          "frontRideHeight": 5,
+          "rearRideHeight": 4
+        },
+        "brakes": {
+          "brakePressure": 80,
+          "frontBrakeBias": 53
+        },
+        "tyres": {
+          "frontTyrePressure": 23.0,
+          "rearTyrePressure": 21.5
         },
         "weightDistribution": {
           "ballast": 7
