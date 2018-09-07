@@ -13,7 +13,7 @@ https://f1setup.now.sh/
   - [ ] Save preference using index db (localForage)
 - [ ] Compare current setup with listed setup under mouse on mouse over
 - [x] Use `now` to deploy
-- [ ] Configure `deploy` on commit and `alias` on tag with `travis-ci` and `now`
+- [x] Configure `deploy` on commit and `alias` on tag with `travis-ci` and `now`
 - [ ] Might be possible to deploy everything in one server on now. Think about it. Remember to consider development cycle.
 
 ## FAQ
@@ -26,4 +26,12 @@ Because I intend to evolve the system to something more interesting and crowd po
 
 ```
 npx now rm f1setup --safe --yes
+```
+
+## Set secrets
+
+Reference: https://zeit.co/blog/environment-variables-secrets
+
+```console
+$ npx now secret add acme-api-key my-value-here
 ```

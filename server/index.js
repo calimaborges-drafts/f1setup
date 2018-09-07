@@ -3,16 +3,12 @@ const { ParseServer } = require("parse-server");
 const ParseDashboard = require("parse-dashboard");
 
 const appId = "f1setup-api";
-const masterKey = "LE_MASTER_KEY";
-const serverURL = "http://localhost:3000/parse";
+const serverURL = process.env.NOW_URL || "http://localhost:3000/parse";
+const masterKey = process.env.MASTER_KEY || "LE_MASTER_KEY";
+const databaseURI =
+  process.env.DB_URL || "mongodb://localhost:27017/f1setup-api-dev";
 
-const parseServerConfig = {
-  databaseURI: "mongodb://localhost:27017/f1setup-api-dev",
-  appId,
-  masterKey,
-  serverURL
-};
-
+const parseServerConfig = { databaseURI, appId, masterKey, serverURL };
 const parseDashboardConfig = {
   apps: [
     {

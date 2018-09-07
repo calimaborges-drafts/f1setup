@@ -12,9 +12,15 @@ script: yarn build
 
 before_deploy: 
   - npm install --global now
+
+env:
+  - PROJECT_TYPE=client
+  - PROJECT_TYPE=server
+
 deploy:
-  - provider: script
-    script: cd client && now --public --token $NOW_TOKEN && now alias --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      master: true
+  provider: script
+  script: bash ./scripts/deploy_$PROJECT_TYPE.sh
+  skip_cleanup: true
+  on:
+    master: true
+

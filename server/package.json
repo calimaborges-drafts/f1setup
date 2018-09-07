@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "now-start": "node index.js",
     "prestart": "mongodb-runner start",
     "start": "node index.js",
     "poststart": "mongodb-runner stop"
