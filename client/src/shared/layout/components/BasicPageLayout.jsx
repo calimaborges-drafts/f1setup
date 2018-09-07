@@ -3,7 +3,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core";
-import { version } from "../../package.json";
 
 const styles = theme => ({
   root: {
@@ -21,7 +20,7 @@ function BasicPageLayout({ title, classes, toolbarChildren, children }) {
         <Toolbar>
           {toolbarChildren}
           <Typography variant="title" color="inherit">
-            {title || `F1 Setup Manager ${version}`}
+            {title || `F1 Setup Manager`}
           </Typography>
         </Toolbar>
       </AppBar>

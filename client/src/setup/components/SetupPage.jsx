@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BasicPageLayout from "../BasicPageLayout";
+import BasicPageLayout from "../../shared/layout/components/BasicPageLayout";
 import SetupList from "./SetupList";
 
 import { setups, setupLimits } from "../../data/database";

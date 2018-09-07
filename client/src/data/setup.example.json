@@ -14,7 +14,7 @@
       "differentialAdjustmentsOnThrottle": 75,
       "differentialAdjustmentOffThrottle": 75
     },
-    "suspensionGemoetry": {
+    "suspensionGeometry": {
       "frontCamber": -2.6,
       "rearCamber": -1.1,
       "frontToe": 0.08,

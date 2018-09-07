@@ -15,12 +15,12 @@
         "min": 50,
         "max": 100
       },
-      "differentialAdjustmentOffThrottle": {
+      "differentialAdjustmentsOffThrottle": {
         "min": 50,
         "max": 100
       }
     },
-    "suspensionGemoetry": {
+    "suspensionGeometry": {
       "frontCamber": {
         "min": -3.5,
         "max": -2.5
@@ -31,7 +31,8 @@
       },
       "frontToe": {
         "min": 0.05,
-        "max": 0.15
+        "max": 0.15,
+        "inverted": true
       },
       "rearToe": {
         "min": 0.2,
@@ -41,11 +42,13 @@
     "suspension": {
       "frontSuspension": {
         "min": 1,
-        "max": 11
+        "max": 11,
+        "inverted": true
       },
       "rearSuspension": {
         "min": 1,
-        "max": 11
+        "max": 11,
+        "inverted": true
       },
       "frontAntiRollBar": {
         "min": 1,
@@ -70,24 +73,28 @@
         "max": 100
       },
       "frontBrakeBias": {
-        "min": 70,
-        "max": 50
+        "min": 50,
+        "max": 70,
+        "inverted": true
       }
     },
     "tyres": {
       "frontTyrePressure": {
         "min": 21,
-        "max": 25
+        "max": 25,
+        "inverted": true
       },
       "rearTyrePressure": {
         "min": 19.5,
-        "max": 23.5
+        "max": 23.5,
+        "inverted": true
       }
     },
     "weightDistribution": {
       "ballast": {
         "min": 1,
-        "max": 11
+        "max": 11,
+        "inverted": true
       }
     }
   },
@@ -106,9 +113,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 75,
-          "differentialAdjustmentOffThrottle": 75
+          "differentialAdjustmentsOffThrottle": 75
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -2.6,
           "rearCamber": -1.1,
           "frontToe": 0.08,
@@ -149,9 +156,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 75,
-          "differentialAdjustmentOffThrottle": 75
+          "differentialAdjustmentsOffThrottle": 75
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -2.8,
           "rearCamber": -1.3,
           "frontToe": 0.09,
@@ -192,9 +199,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 75,
-          "differentialAdjustmentOffThrottle": 75
+          "differentialAdjustmentsOffThrottle": 75
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -3.0,
           "rearCamber": -1.5,
           "frontToe": 0.1,
@@ -235,9 +242,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 75,
-          "differentialAdjustmentOffThrottle": 75
+          "differentialAdjustmentsOffThrottle": 75
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -3.2,
           "rearCamber": -1.7,
           "frontToe": 0.11,
@@ -278,9 +285,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 75,
-          "differentialAdjustmentOffThrottle": 75
+          "differentialAdjustmentsOffThrottle": 75
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -3.4,
           "rearCamber": -1.9,
           "frontToe": 0.12,
@@ -321,9 +328,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 75,
-          "differentialAdjustmentOffThrottle": 70
+          "differentialAdjustmentsOffThrottle": 70
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -2.9,
           "rearCamber": -1.7,
           "frontToe": 0.07,
@@ -364,9 +371,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 75,
-          "differentialAdjustmentOffThrottle": 70
+          "differentialAdjustmentsOffThrottle": 70
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -2.7,
           "rearCamber": -1.0,
           "frontToe": 0.05,
@@ -407,9 +414,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 90,
-          "differentialAdjustmentOffThrottle": 65
+          "differentialAdjustmentsOffThrottle": 65
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -2.5,
           "rearCamber": -1.1,
           "frontToe": 0.07,
@@ -450,9 +457,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 88,
-          "differentialAdjustmentOffThrottle": 69
+          "differentialAdjustmentsOffThrottle": 69
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -3.5,
           "rearCamber": -1.7,
           "frontToe": 0.05,
@@ -493,9 +500,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 60,
-          "differentialAdjustmentOffThrottle": 80
+          "differentialAdjustmentsOffThrottle": 80
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -3.4,
           "rearCamber": -1.9,
           "frontToe": 0.11,
@@ -536,9 +543,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 85,
-          "differentialAdjustmentOffThrottle": 60
+          "differentialAdjustmentsOffThrottle": 60
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -2.6,
           "rearCamber": -1.3,
           "frontToe": 0.08,
@@ -579,9 +586,9 @@
         },
         "transmission": {
           "differentialAdjustmentsOnThrottle": 100,
-          "differentialAdjustmentOffThrottle": 80
+          "differentialAdjustmentsOffThrottle": 80
         },
-        "suspensionGemoetry": {
+        "suspensionGeometry": {
           "frontCamber": -2.5,
           "rearCamber": -1.0,
           "frontToe": 0.05,
