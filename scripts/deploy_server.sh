@@ -1,5 +1,5 @@
 cd server && \
-npx now --public \
+now --public \
 --token $NOW_TOKEN \
 -e MASTER_KEY=@master-key -e DB_URL=@db-url && \
-npx now alias --token $NOW_TOKEN
+now alias --token $NOW_TOKEN
