@@ -15,7 +15,7 @@ import {
   generateCells,
   generateGroupHeader,
   generateFieldHeaders
-} from "./HeadersAndCellsGenerator";
+} from "./SetupTableGenerator";
 
 const styles = theme => {
   return {
