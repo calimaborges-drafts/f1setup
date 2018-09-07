@@ -1,4 +1,9 @@
 {
   "name": "f1setup-api",
-  "alias": "f1setup-api"
+  "alias": "f1setup-api",
+  "env": {
+    "MASTER_KEY": "@master-key",
+    "DB_URL": "@db-url",
+    "NODE_ENV": "production"
+  }
 }

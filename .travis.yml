@@ -19,7 +19,7 @@ env:
 
 deploy:
   provider: script
-  script: bash ./scripts/deploy_$PROJECT_TYPE.sh
+  script: cd $PROJECT_TYPE && now --public --token $NOW_TOKEN && now alias --token $NOW_TOKEN
   skip_cleanup: true
   on:
     master: true
