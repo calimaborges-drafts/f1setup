@@ -12,8 +12,8 @@ script: yarn build
 
 before_deploy: 
   - npm install --global now
-  - now rm f1setup-api --safe --yes --token $NOW_TOKEN 2>&1
-  - now rm f1setup --safe --yes --token $NOW_TOKEN 2>&1
+  - now rm f1setup-api --safe --yes --token $NOW_TOKEN || true
+  - now rm f1setup --safe --yes --token $NOW_TOKEN || true
 
 env:
   - PROJECT_TYPE=client
