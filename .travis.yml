@@ -12,6 +12,8 @@ script: yarn build
 
 before_deploy: 
   - npm install --global now
+  - now rm f1setup-api --safe --yes
+  - now rm f1setup --safe --yes
 
 env:
   - PROJECT_TYPE=client
