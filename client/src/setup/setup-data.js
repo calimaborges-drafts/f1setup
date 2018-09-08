@@ -31,6 +31,74 @@ function generateSetupField(description, abbreviation) {
   return new SetupField(id, description, abbr);
 }
 
+export const setupMetadata = [
+  generateSetupGroup("Aerodynamics", [
+    generateSetupField("Front Wing Aero"),
+    generateSetupField("Rear Wing Aero")
+  ]),
+  generateSetupGroup("Brakes", [
+    generateSetupField("Brake Pressure"),
+    generateSetupField("Front Brake Bias")
+  ]),
+  generateSetupGroup("Suspension", [
+    generateSetupField("Front Suspension"),
+    generateSetupField("Rear Suspension"),
+    generateSetupField("Front Anti Roll Bar"),
+    generateSetupField("Rear Anti Roll Bar"),
+    generateSetupField("Front Ride Height"),
+    generateSetupField("Rear Ride Height")
+  ]),
+  generateSetupGroup("Suspension Geometry", [
+    generateSetupField("Front Camber"),
+    generateSetupField("Rear Camber"),
+    generateSetupField("Front Toe"),
+    generateSetupField("Rear Toe")
+  ]),
+  generateSetupGroup("Transmission", [
+    generateSetupField("Differential Adjustments On Throttle", "DAONT"),
+    generateSetupField("Differential Adjustments Off Throttle", "DAOFT")
+  ]),
+  generateSetupGroup("Tyres", [
+    generateSetupField("Front Tyre Pressure"),
+    generateSetupField("Rear Tyre Pressure")
+  ]),
+  generateSetupGroup("Weight Distribution", [generateSetupField("Ballast")])
+];
+
+// *** THIS CODE IS NOT REALLY USED ***
+// Think this would be too abstract :-/ Maybe it is better to leave more explicit
+// Leaving it here for now
+// The intent of this function is to create function for all setup groups with each
+// receiving the field parameters for the group. A example of generated function:
+// Notice it is based on `setupMetadata`:
+//
+// function aerodynamics(aerodynamicsFrontAeroWings, aerodynamicsRearAeroWings) {
+//   retun { aerodynamicsFrontAeroWings, aerodynamicsRearAeroWings}
+// }
+//
+function generateCreationFunctions() {
+  return setupMetadata.reduce((functions, group) => {
+    const functionName = group.id;
+    return {
+      ...functions,
+      [functionName]: function(...params) {
+        let paramCounter = 0;
+        return group.fields.reduce(
+          (generatedField, field) => ({
+            ...generatedField,
+            [`${camelCase(group.id)}${pascalCase(field.id)}`]: params[
+              paramCounter++
+            ]
+          }),
+          {}
+        );
+      }
+    };
+  }, {});
+}
+const cf = generateCreationFunctions();
+cf.aerodynamics(1, 10);
+
 function basicData(name, team, track, weather, time) {
   return {
     name,
@@ -188,38 +256,4 @@ export const defaultSetups = [
     tyres(23.8, 22.3),
     weightDistribution(8)
   )
-];
-
-export const setupMetadata = [
-  generateSetupGroup("Aerodynamics", [
-    generateSetupField("Front Wing Aero"),
-    generateSetupField("Rear Wing Aero")
-  ]),
-  generateSetupGroup("Brakes", [
-    generateSetupField("Brake Pressure"),
-    generateSetupField("Front Brake Bias")
-  ]),
-  generateSetupGroup("Suspension", [
-    generateSetupField("Front Suspension"),
-    generateSetupField("Rear Suspension"),
-    generateSetupField("Front Anti Roll Bar"),
-    generateSetupField("Rear Anti Roll Bar"),
-    generateSetupField("Front Ride Height"),
-    generateSetupField("Rear Ride Height")
-  ]),
-  generateSetupGroup("Suspension Geometry", [
-    generateSetupField("Front Camber"),
-    generateSetupField("Rear Camber"),
-    generateSetupField("Front Toe"),
-    generateSetupField("Rear Toe")
-  ]),
-  generateSetupGroup("Transmission", [
-    generateSetupField("Differential Adjustments On Throttle", "DAONT"),
-    generateSetupField("Differential Adjustments Off Throttle", "DAOFT")
-  ]),
-  generateSetupGroup("Tyres", [
-    generateSetupField("Front Tyre Pressure"),
-    generateSetupField("Rear Tyre Pressure")
-  ]),
-  generateSetupGroup("Weight Distribution", [generateSetupField("Ballast")])
 ];
