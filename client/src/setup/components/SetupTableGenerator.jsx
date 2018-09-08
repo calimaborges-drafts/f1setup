@@ -1,9 +1,10 @@
 import React from "react";
 import { TableCell } from "@material-ui/core";
 
-import { setupLimits } from "../../data/database.json";
+import { setupLimits } from "../setup-data";
 import Abbr from "../../shared/abbreviation/components/Abbr";
 import { generateDomColorizer } from "../../shared/colorization/colorizer";
+import { camelCase, pascalCase } from "change-case";
 
 export function generateGroupHeader(group) {
   return (
@@ -22,17 +23,13 @@ export function generateFieldHeaders(group) {
 }
 
 export function generateCells(group, setup) {
-  const data = setup.data[group.id];
-  const limits = setupLimits[group.id];
   return group.fields.map(field => {
-    const colorizer = generateDomColorizer(
-      limits[field.id].min,
-      limits[field.id].max,
-      limits[field.id].inverted
-    );
+    const fieldName = `${camelCase(group.id)}${pascalCase(field.id)}`;
+    const { min, max, inverted } = setupLimits[fieldName];
+    const colorizer = generateDomColorizer(min, max, inverted);
     return (
       <TableCell key={`${setup.id}${field.id}`}>
-        {colorizer(data[field.id])}
+        {colorizer(setup[fieldName])}
       </TableCell>
     );
   });

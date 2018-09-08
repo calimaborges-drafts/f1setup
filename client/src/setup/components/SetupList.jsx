@@ -8,8 +8,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-import { setupMetadata } from "../setup-metadata";
-
+import { setupMetadata } from "../setup-data";
 import { BasicDataHeaders, BasicDataCells } from "./BasicData";
 import {
   generateCells,
