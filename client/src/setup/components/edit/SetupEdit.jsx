@@ -83,6 +83,14 @@ class SetupEdit extends Component {
               onChange={this._handleChange("name")}
               className={classes.textField}
             />
+            <TextField
+              fullWidth
+              id="time"
+              label="Time"
+              value={this.state.time}
+              onChange={this._handleChange("time")}
+              className={classes.textField}
+            />
             {this._createFormSelect("team", "Team", setupTeams)}
             {this._createFormSelect("track", "Track", setupTracks)}
             {this._createFormSelect("weather", "Weather", setupWeathers)}

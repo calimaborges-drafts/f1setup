@@ -293,3 +293,22 @@ export const setupTracks = [
   new SetupTrack("mexico", "México"),
   new SetupTrack("brazil", "Brazil")
 ];
+
+function filterAnyById(list) {
+  return function(id) {
+    if (!id) {
+      return { description: "Any", name: "Any" };
+    } else {
+      const filtered = list.filter(item => item.id === id);
+      if (filtered.length > 0) {
+        return filtered[0];
+      } else {
+        return { description: "Not found", name: "Not found" };
+      }
+    }
+  };
+}
+
+export const findSetupTeamById = filterAnyById(setupTeams);
+export const findSetupTrackById = filterAnyById(setupTracks);
+export const findSetupWeatherById = filterAnyById(setupWeathers);
