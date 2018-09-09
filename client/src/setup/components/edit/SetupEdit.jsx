@@ -22,15 +22,21 @@ function appendAny(list, descriptionName = "description") {
 
 class SetupEdit extends Component {
   state = {
-    weather: 0,
-    team: 0,
-    track: 0
+    weather: "",
+    team: "",
+    track: ""
   };
 
   _handleChange = fieldId => event =>
     this.setState({
       [fieldId]: event.target.value
     });
+
+  _handleSave = async () => {
+    const { onSave, onClose } = this.props;
+    await onSave(this.state);
+    onClose();
+  };
 
   _createFormSelect(id, label, list) {
     const { classes } = this.props;
@@ -53,7 +59,7 @@ class SetupEdit extends Component {
   }
 
   render() {
-    const { classes, isOpened, onClose, onSave } = this.props;
+    const { classes, isOpened, onClose } = this.props;
     return (
       <Dialog fullScreen open={isOpened}>
         <AppBar className={classes.appBar}>
@@ -68,7 +74,7 @@ class SetupEdit extends Component {
             >
               New Setup
             </Typography>
-            <Button color="inherit" onClick={onSave}>
+            <Button color="inherit" onClick={this._handleSave}>
               save
             </Button>
           </Toolbar>

@@ -34,6 +34,11 @@ class SetupPage extends Component {
     });
   }
 
+  async _saveSetup(setupData) {
+    const setup = new Setup();
+    return setup.save(setupData);
+  }
+
   _toggleEdit = editing => () => this.setState({ editing });
 
   render() {
@@ -55,6 +60,7 @@ class SetupPage extends Component {
             <SetupEdit
               isOpened={this.state.editing}
               onClose={this._toggleEdit(false)}
+              onSave={this._saveSetup}
             />
             <SetupList setups={this.state.setups} setupLimits={setupLimits} />
           </Fragment>
