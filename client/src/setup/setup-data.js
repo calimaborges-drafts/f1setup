@@ -1,6 +1,28 @@
 import { abbreviate } from "../shared/abbreviation/abbreviator";
 import { camelCase } from "change-case";
 
+class SetupTeam {
+  constructor(id, name, description) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+  }
+}
+
+class SetupWeather {
+  constructor(id, description) {
+    this.id = id;
+    this.description = description;
+  }
+}
+
+class SetupTrack {
+  constructor(id, description) {
+    this.id = id;
+    this.description = description;
+  }
+}
+
 class SetupGroup {
   constructor(id, description, fields) {
     this.id = id;
@@ -222,4 +244,52 @@ export const defaultSetups = [
     tyres(23.8, 22.3),
     weightDistribution(8)
   )
+];
+
+export const setupTeams = [
+  new SetupTeam("mercedes", "Mercedes", "Mercedes-AMG Petronas Motorsport"),
+  new SetupTeam("ferrari", "Ferrari", "Scuderia Ferrari"),
+  new SetupTeam("red-bull", "Red Bull", "Aston Martin Red Bull Racing"),
+  new SetupTeam(
+    "force-india",
+    "Force India",
+    "Sahara Force India Formula One Team"
+  ),
+  new SetupTeam("williams", "Williams", "Williams Racing"),
+  new SetupTeam("renault", "Renault", "Renault Sport Formula One Team"),
+  new SetupTeam("toro-rosso", "Toro Rosso", "Red Bull Toro Rosso Honda"),
+  new SetupTeam("haas", "Haas", "Haas F1 Team"),
+  new SetupTeam("mclaren", "McLaren", "McLaren F1 Team"),
+  new SetupTeam("sauber", "Sauber", "Alfa Romeo Sauber F1 Team")
+];
+
+export const setupWeathers = [
+  new SetupWeather("dry", "Dry"),
+  new SetupWeather("wet", "Wet")
+];
+
+export const setupTracks = [
+  new SetupTrack("australia", "Australia"),
+  new SetupTrack("bahrain", "Bahrain"),
+  new SetupTrack("bahrain-short", "Bahrain Short"),
+  new SetupTrack("china", "China"),
+  new SetupTrack("azerbaijan", "Azerbaijan"),
+  new SetupTrack("spain", "Spain"),
+  new SetupTrack("monaco", "Monaco"),
+  new SetupTrack("canada", "Canada"),
+  new SetupTrack("france", "France"),
+  new SetupTrack("austria", "Austria"),
+  new SetupTrack("britain", "Britain"),
+  new SetupTrack("britain-short", "Britain Short"),
+  new SetupTrack("germany", "Germany"),
+  new SetupTrack("hungary", "Hungary"),
+  new SetupTrack("belgium", "Belgium"),
+  new SetupTrack("italy", "Italy"),
+  new SetupTrack("singapore", "Singapore"),
+  new SetupTrack("russia", "Russia"),
+  new SetupTrack("japan", "Japan"),
+  new SetupTrack("japan-short", "Japan Short"),
+  new SetupTrack("usa", "USA"),
+  new SetupTrack("mexico", "México"),
+  new SetupTrack("brazil", "Brazil")
 ];

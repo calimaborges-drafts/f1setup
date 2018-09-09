@@ -35,33 +35,35 @@ class SetupList extends Component {
     const setupGroupHeaders = setupMetadata.map(generateGroupHeader);
     const setupFieldHeaders = setupMetadata.map(generateFieldHeaders);
     return (
-      <Paper className={classes.root} square>
-        <Table className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <TableCell colSpan={5}>Basic Data</TableCell>
-              {setupGroupHeaders}
-            </TableRow>
-            <TableRow>
-              <BasicDataHeaders />
-              {setupFieldHeaders}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {setups.map(setup => {
-              const setupFieldCells = setupMetadata.map(group =>
-                generateCells(group, setup)
-              );
-              return (
-                <TableRow key={setup.id}>
-                  <BasicDataCells setup={setup} />
-                  {setupFieldCells}
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </Paper>
+      <React.Fragment>
+        <Paper className={classes.root} square>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <TableCell colSpan={5}>Basic Data</TableCell>
+                {setupGroupHeaders}
+              </TableRow>
+              <TableRow>
+                <BasicDataHeaders />
+                {setupFieldHeaders}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {setups.map(setup => {
+                const setupFieldCells = setupMetadata.map(group =>
+                  generateCells(group, setup)
+                );
+                return (
+                  <TableRow key={setup.id}>
+                    <BasicDataCells setup={setup} />
+                    {setupFieldCells}
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Paper>
+      </React.Fragment>
     );
   }
 }

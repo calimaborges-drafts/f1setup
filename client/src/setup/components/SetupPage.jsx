@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Parse from "parse";
 
 import BasicPageLayout from "../../shared/layout/components/BasicPageLayout";
@@ -6,6 +6,7 @@ import SetupList from "./SetupList";
 
 import { defaultSetups, setupLimits } from "../setup-data";
 import { Setup } from "../setup-repository";
+import SetupEdit from "./edit/SetupEdit";
 
 class SetupPage extends Component {
   state = { setups: defaultSetups };
@@ -22,13 +23,15 @@ class SetupPage extends Component {
   }
 
   render() {
-    console.log(this.state.setups);
     return (
       <BasicPageLayout>
         {this.state.setups === null ? (
           <h1>Loading</h1>
         ) : (
-          <SetupList setups={this.state.setups} setupLimits={setupLimits} />
+          <Fragment>
+            <SetupEdit isOpened={false} />
+            <SetupList setups={this.state.setups} setupLimits={setupLimits} />
+          </Fragment>
         )}
       </BasicPageLayout>
     );
