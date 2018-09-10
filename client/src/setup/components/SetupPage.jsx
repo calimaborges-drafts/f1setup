@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Parse from "parse";
 import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
@@ -17,6 +17,9 @@ const styles = theme => ({
     bottom: theme.spacing.unit * 2,
     right: theme.spacing.unit * 2,
     zIndex: 999
+  },
+  container: {
+    marginBottom: theme.spacing.unit * 10
   }
 });
 
@@ -56,34 +59,30 @@ class SetupPage extends Component {
     const { classes } = this.props;
     return (
       <BasicPageLayout>
-        {this.state.setups === null ? (
-          <h1>Loading</h1>
-        ) : (
-          <Fragment>
-            <Button
-              variant="fab"
-              className={classes.fab}
-              color="primary"
-              onClick={() => this._onShowEdit(null)}
-            >
-              <AddIcon />
-            </Button>
-            {this.state.editing && (
-              <SetupEdit
-                isOpened={this.state.editing}
-                onEdit={this._onEdit}
-                onClose={() => this.setState({ editing: false })}
-                onSave={this._saveSetup}
-                editing={this.state.setupToEdit}
-              />
-            )}
-            <SetupList
-              setups={this.state.setups}
-              onEdit={this._onShowEdit}
-              setupLimits={setupLimits}
+        <div className={classes.container}>
+          <Button
+            variant="fab"
+            className={classes.fab}
+            color="primary"
+            onClick={() => this._onShowEdit(null)}
+          >
+            <AddIcon />
+          </Button>
+          {this.state.editing && (
+            <SetupEdit
+              isOpened={this.state.editing}
+              onEdit={this._onEdit}
+              onClose={() => this.setState({ editing: false })}
+              onSave={this._saveSetup}
+              editing={this.state.setupToEdit}
             />
-          </Fragment>
-        )}
+          )}
+          <SetupList
+            setups={this.state.setups}
+            onEdit={this._onShowEdit}
+            setupLimits={setupLimits}
+          />
+        </div>
       </BasicPageLayout>
     );
   }
