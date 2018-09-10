@@ -1,5 +1,5 @@
 import { abbreviate } from "../shared/abbreviation/abbreviator";
-import { camelCase } from "change-case";
+import { camelCase, pascalCase } from "change-case";
 
 class SetupTeam {
   constructor(id, name, description) {
@@ -58,9 +58,15 @@ export const setupMetadata = [
     generateSetupField("Front Wing Aero"),
     generateSetupField("Rear Wing Aero")
   ]),
-  generateSetupGroup("Brakes", [
-    generateSetupField("Brake Pressure"),
-    generateSetupField("Front Brake Bias")
+  generateSetupGroup("Transmission", [
+    generateSetupField("Differential Adjustments On Throttle", "DAONT"),
+    generateSetupField("Differential Adjustments Off Throttle", "DAOFT")
+  ]),
+  generateSetupGroup("Suspension Geometry", [
+    generateSetupField("Front Camber"),
+    generateSetupField("Rear Camber"),
+    generateSetupField("Front Toe"),
+    generateSetupField("Rear Toe")
   ]),
   generateSetupGroup("Suspension", [
     generateSetupField("Front Suspension"),
@@ -70,15 +76,9 @@ export const setupMetadata = [
     generateSetupField("Front Ride Height"),
     generateSetupField("Rear Ride Height")
   ]),
-  generateSetupGroup("Suspension Geometry", [
-    generateSetupField("Front Camber"),
-    generateSetupField("Rear Camber"),
-    generateSetupField("Front Toe"),
-    generateSetupField("Rear Toe")
-  ]),
-  generateSetupGroup("Transmission", [
-    generateSetupField("Differential Adjustments On Throttle", "DAONT"),
-    generateSetupField("Differential Adjustments Off Throttle", "DAOFT")
+  generateSetupGroup("Brakes", [
+    generateSetupField("Brake Pressure"),
+    generateSetupField("Front Brake Bias")
   ]),
   generateSetupGroup("Tyres", [
     generateSetupField("Front Tyre Pressure"),
@@ -189,8 +189,7 @@ export const setupLimits = Object.assign(
 
 export const defaultSetups = [
   Object.assign(
-    {},
-    { id: "DEF1" },
+    { id: "DEF1", isDefault: true },
     basicData("MAXIMUM_DOWNFORCE"),
     aerodynamics(10, 11),
     transmission(75, 75),
@@ -201,7 +200,7 @@ export const defaultSetups = [
     weightDistribution(4)
   ),
   Object.assign(
-    { id: "DEF2" },
+    { id: "DEF2", isDefault: true },
     basicData("INCREASED_DOWNFORCE"),
     aerodynamics(8, 9),
     transmission(75, 75),
@@ -212,7 +211,7 @@ export const defaultSetups = [
     weightDistribution(5)
   ),
   Object.assign(
-    { id: "DEF3" },
+    { id: "DEF3", isDefault: true },
     basicData("BALANCED_DEFAULT"),
     aerodynamics(6, 6),
     transmission(75, 75),
@@ -223,7 +222,7 @@ export const defaultSetups = [
     weightDistribution(6)
   ),
   Object.assign(
-    { id: "DEF4" },
+    { id: "DEF4", isDefault: true },
     basicData("INCREASED_TOP_SPEED"),
     aerodynamics(4, 4),
     transmission(75, 75),
@@ -234,7 +233,7 @@ export const defaultSetups = [
     weightDistribution(7)
   ),
   Object.assign(
-    { id: "DEF5" },
+    { id: "DEF5", isDefault: true },
     basicData("MAXIMUM_TOP_SPEED"),
     aerodynamics(2, 2),
     transmission(75, 75),
@@ -309,6 +308,8 @@ function filterAnyById(list) {
   };
 }
 
+export const generateFieldName = (group, field) =>
+  `${camelCase(group.id)}${pascalCase(field.id)}`;
 export const findSetupTeamById = filterAnyById(setupTeams);
 export const findSetupTrackById = filterAnyById(setupTracks);
 export const findSetupWeatherById = filterAnyById(setupWeathers);

@@ -21,9 +21,13 @@ const styles = theme => ({
 });
 
 class SetupPage extends Component {
-  state = { setups: defaultSetups, editing: false };
+  state = { setups: defaultSetups, editing: false, setupToEdit: null };
 
   async componentDidMount() {
+    return this._refresh();
+  }
+
+  async _refresh() {
     const query = new Parse.Query(Setup);
     const setups = await query.find();
     this.setState({
@@ -34,12 +38,19 @@ class SetupPage extends Component {
     });
   }
 
-  async _saveSetup(setupData) {
-    const setup = new Setup();
-    return setup.save(setupData);
-  }
+  _onShowEdit = id => {
+    const setupToEdit = id
+      ? this.state.setups.filter(setup => setup.id === id)[0]
+      : null;
+    this.setState({ setupToEdit, editing: true });
+  };
 
-  _toggleEdit = editing => () => this.setState({ editing });
+  _saveSetup = async setupData => {
+    const setup = new Setup();
+    this.setState({ setupToEdit: null, editing: false });
+    await setup.save(setupData);
+    this._refresh();
+  };
 
   render() {
     const { classes } = this.props;
@@ -53,16 +64,24 @@ class SetupPage extends Component {
               variant="fab"
               className={classes.fab}
               color="primary"
-              onClick={this._toggleEdit(true)}
+              onClick={() => this._onShowEdit(null)}
             >
               <AddIcon />
             </Button>
-            <SetupEdit
-              isOpened={this.state.editing}
-              onClose={this._toggleEdit(false)}
-              onSave={this._saveSetup}
+            {this.state.editing && (
+              <SetupEdit
+                isOpened={this.state.editing}
+                onEdit={this._onEdit}
+                onClose={() => this.setState({ editing: false })}
+                onSave={this._saveSetup}
+                editing={this.state.setupToEdit}
+              />
+            )}
+            <SetupList
+              setups={this.state.setups}
+              onEdit={this._onShowEdit}
+              setupLimits={setupLimits}
             />
-            <SetupList setups={this.state.setups} setupLimits={setupLimits} />
           </Fragment>
         )}
       </BasicPageLayout>

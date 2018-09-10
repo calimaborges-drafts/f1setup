@@ -7,6 +7,8 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import IconButton from "@material-ui/core/IconButton";
+import EditButton from "@material-ui/icons/Edit";
 
 import { setupMetadata } from "../setup-data";
 import { BasicDataHeaders, BasicDataCells } from "./BasicData";
@@ -25,13 +27,22 @@ const styles = theme => {
     },
     table: {
       minWidth: 700
+    },
+    actionButton: {
+      margin: theme.spacing.unit / 2,
+      width: "2rem",
+      height: "2rem"
+    },
+    actionButtonIcon: {
+      width: "1rem",
+      height: "1rem"
     }
   };
 };
 
 class SetupList extends Component {
   render() {
-    const { classes, setups } = this.props;
+    const { classes, setups, onEdit } = this.props;
     const setupGroupHeaders = setupMetadata.map(generateGroupHeader);
     const setupFieldHeaders = setupMetadata.map(generateFieldHeaders);
     return (
@@ -40,10 +51,12 @@ class SetupList extends Component {
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
+                <TableCell colSpan={1}>Actions</TableCell>
                 <TableCell colSpan={5}>Basic Data</TableCell>
                 {setupGroupHeaders}
               </TableRow>
               <TableRow>
+                <TableCell />
                 <BasicDataHeaders />
                 {setupFieldHeaders}
               </TableRow>
@@ -55,6 +68,17 @@ class SetupList extends Component {
                 );
                 return (
                   <TableRow key={setup.id}>
+                    <TableCell>
+                      {!setup.isDefault && (
+                        <IconButton
+                          className={classes.actionButton}
+                          aria-label="Edit"
+                          onClick={() => onEdit(setup.id)}
+                        >
+                          <EditButton className={classes.actionButtonIcon} />
+                        </IconButton>
+                      )}
+                    </TableCell>
                     <BasicDataCells setup={setup} />
                     {setupFieldCells}
                   </TableRow>

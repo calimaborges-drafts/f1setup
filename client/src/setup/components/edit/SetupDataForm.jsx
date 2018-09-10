@@ -3,7 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core";
 
 import FormGroup from "./FormGroup";
-import { setupMetadata } from "../../setup-data";
+import { setupMetadata, generateFieldName } from "../../setup-data";
 
 import { styles } from "./SetupEdit.css";
 
@@ -18,7 +18,7 @@ class SetupDataForm extends React.Component {
         id={id}
         label={label}
         value={this.props[id]}
-        onChange={handleChange(id)}
+        onChange={handleChange(id, true)}
         className={classes.textField}
         helperText={<small>{helperText}</small>}
       />
@@ -32,7 +32,7 @@ class SetupDataForm extends React.Component {
           <FormGroup key={group.id} title={group.description}>
             {group.fields.map(field =>
               this._createTextField(
-                field.id,
+                generateFieldName(group, field),
                 field.abbreviation,
                 field.description
               )

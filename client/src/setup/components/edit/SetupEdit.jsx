@@ -17,25 +17,28 @@ import { FormControl, InputLabel, Select } from "@material-ui/core";
 import { setupWeathers, setupTeams, setupTracks } from "../../setup-data";
 
 function appendAny(list, descriptionName = "description") {
-  return [{ id: 0, [descriptionName]: "Any" }, ...list];
+  return [{ id: "", [descriptionName]: "Any" }, ...list];
 }
 
-class SetupEdit extends Component {
-  state = {
-    weather: "",
-    team: "",
-    track: ""
-  };
+const EMPTY_STATE = {
+  weather: "",
+  team: "",
+  track: ""
+};
 
-  _handleChange = fieldId => event =>
+class SetupEdit extends Component {
+  state = this.props.editing ? { ...this.props.editing } : { ...EMPTY_STATE };
+
+  _handleChange = (fieldId, convertToNumber) => event =>
     this.setState({
-      [fieldId]: event.target.value
+      [fieldId]: convertToNumber
+        ? Number(event.target.value)
+        : event.target.value
     });
 
   _handleSave = async () => {
-    const { onSave, onClose } = this.props;
-    await onSave(this.state);
-    onClose();
+    const { onSave } = this.props;
+    return onSave(this.state);
   };
 
   _createFormSelect(id, label, list) {
@@ -62,24 +65,29 @@ class SetupEdit extends Component {
     const { classes, isOpened, onClose } = this.props;
     return (
       <Dialog fullScreen open={isOpened}>
-        <AppBar className={classes.appBar}>
-          <Toolbar>
-            <IconButton color="inherit" onClick={onClose} aria-label="Close">
-              <CloseIcon />
-            </IconButton>
-            <Typography
-              variant="title"
-              color="inherit"
-              className={classes.toolbar}
-            >
-              New Setup
-            </Typography>
-            <Button color="inherit" onClick={this._handleSave}>
-              save
-            </Button>
-          </Toolbar>
-        </AppBar>
-        <form className={classes.container} noValidate autoComplete="off">
+        <form
+          className={classes.container}
+          noValidate
+          autoComplete="off"
+          onSubmit={this._handleSave}
+        >
+          <AppBar className={classes.appBar}>
+            <Toolbar>
+              <IconButton color="inherit" onClick={onClose} aria-label="Close">
+                <CloseIcon />
+              </IconButton>
+              <Typography
+                variant="title"
+                color="inherit"
+                className={classes.toolbar}
+              >
+                {this.props.editing ? "Edit Setup" : "New Setup"}
+              </Typography>
+              <Button color="inherit" type="submit">
+                save
+              </Button>
+            </Toolbar>
+          </AppBar>
           <FormGroup title="Basic data">
             <TextField
               fullWidth
@@ -101,7 +109,7 @@ class SetupEdit extends Component {
             {this._createFormSelect("track", "Track", setupTracks)}
             {this._createFormSelect("weather", "Weather", setupWeathers)}
           </FormGroup>
-          <SetupDataForm handleChange={this._handleChange} />
+          <SetupDataForm handleChange={this._handleChange} {...this.state} />
         </form>
       </Dialog>
     );
